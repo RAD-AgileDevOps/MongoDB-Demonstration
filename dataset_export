@@ -1,0 +1,166 @@
+# The database in the MongoDb server is called CORD19
+# he collection(analoguous to a table in a RDBMS) is: col_ecdcCOVID19_[YYYYMMDD}
+
+
+
+# Example to be run in computer's command Line;e.g. on MSWindows machine it will be "CMD"
+
+
+#1. Command for importing
+mongoimport --db CORD19 --collection col_ecdcCOVID19_20200615 --file ..\demo.json
+
+#2 .I perform some basic querting using MongoDB query language
+    E.G 
+      (i)  db.col_ecdcCOVID19_20200615.find({}).limit(10).pretty()
+      (ii) db.col_ecdcCOVID19_20200615.count()
+
+#3 command for exporting dataset from a MongoDB server:
+mongoexport --db=CORD19 --collection=col_ecdcCOVID19_20200615  --out=C:\Databases\PostgreSQL\COVID19_DATA_ANALYSIS\demo.json
+
+
+
+
+-- ====================================== output from No.2 ========================================================================
+MongoDB Enterprise > db.col_ecdcCOVID19_20200615.find({}).limit(10).pretty()
+{
+        "_id" : ObjectId("5ee74ba60527f20c38ad0157"),
+        "dateRep" : "13/06/2020",
+        "day" : "13",
+        "month" : "6",
+        "year" : "2020",
+        "cases" : "656",
+        "deaths" : "20",
+        "countriesAndTerritories" : "Afghanistan",
+        "geoId" : "AF",
+        "countryterritoryCode" : "AFG",
+        "popData2018" : "37172386",
+        "continentExp" : "Asia"
+}
+{
+        "_id" : ObjectId("5ee74ba60527f20c38ad0158"),
+        "dateRep" : "14/06/2020",
+        "day" : "14",
+        "month" : "6",
+        "year" : "2020",
+        "cases" : "556",
+        "deaths" : "5",
+        "countriesAndTerritories" : "Afghanistan",
+        "geoId" : "AF",
+        "countryterritoryCode" : "AFG",
+        "popData2018" : "37172386",
+        "continentExp" : "Asia"
+}
+{
+        "_id" : ObjectId("5ee74ba60527f20c38ad0159"),
+        "dateRep" : "11/06/2020",
+        "day" : "11",
+        "month" : "6",
+        "year" : "2020",
+        "cases" : "684",
+        "deaths" : "21",
+        "countriesAndTerritories" : "Afghanistan",
+        "geoId" : "AF",
+        "countryterritoryCode" : "AFG",
+        "popData2018" : "37172386",
+        "continentExp" : "Asia"
+}
+{
+        "_id" : ObjectId("5ee74ba60527f20c38ad015a"),
+        "dateRep" : "10/06/2020",
+        "day" : "10",
+        "month" : "6",
+        "year" : "2020",
+        "cases" : "542",
+        "deaths" : "15",
+        "countriesAndTerritories" : "Afghanistan",
+        "geoId" : "AF",
+        "countryterritoryCode" : "AFG",
+        "popData2018" : "37172386",
+        "continentExp" : "Asia"
+}
+{
+        "_id" : ObjectId("5ee74ba60527f20c38ad015b"),
+        "dateRep" : "07/06/2020",
+        "day" : "7",
+        "month" : "6",
+        "year" : "2020",
+        "cases" : "582",
+        "deaths" : "18",
+        "countriesAndTerritories" : "Afghanistan",
+        "geoId" : "AF",
+        "countryterritoryCode" : "AFG",
+        "popData2018" : "37172386",
+        "continentExp" : "Asia"
+}
+{
+        "_id" : ObjectId("5ee74ba60527f20c38ad015c"),
+        "dateRep" : "06/06/2020",
+        "day" : "6",
+        "month" : "6",
+        "year" : "2020",
+        "cases" : "915",
+        "deaths" : "9",
+        "countriesAndTerritories" : "Afghanistan",
+        "geoId" : "AF",
+        "countryterritoryCode" : "AFG",
+        "popData2018" : "37172386",
+        "continentExp" : "Asia"
+}
+{
+        "_id" : ObjectId("5ee74ba60527f20c38ad015d"),
+        "dateRep" : "05/06/2020",
+        "day" : "5",
+        "month" : "6",
+        "year" : "2020",
+        "cases" : "787",
+        "deaths" : "6",
+        "countriesAndTerritories" : "Afghanistan",
+        "geoId" : "AF",
+        "countryterritoryCode" : "AFG",
+        "popData2018" : "37172386",
+        "continentExp" : "Asia"
+}
+{
+        "_id" : ObjectId("5ee74ba60527f20c38ad015e"),
+        "dateRep" : "04/06/2020",
+        "day" : "4",
+        "month" : "6",
+        "year" : "2020",
+        "cases" : "758",
+        "deaths" : "24",
+        "countriesAndTerritories" : "Afghanistan",
+        "geoId" : "AF",
+        "countryterritoryCode" : "AFG",
+        "popData2018" : "37172386",
+        "continentExp" : "Asia"
+}
+{
+        "_id" : ObjectId("5ee74ba60527f20c38ad015f"),
+        "dateRep" : "15/06/2020",
+        "day" : "15",
+        "month" : "6",
+        "year" : "2020",
+        "cases" : "664",
+        "deaths" : "20",
+        "countriesAndTerritories" : "Afghanistan",
+        "geoId" : "AF",
+        "countryterritoryCode" : "AFG",
+        "popData2018" : "37172386",
+        "continentExp" : "Asia"
+}
+{
+        "_id" : ObjectId("5ee74ba60527f20c38ad0160"),
+        "dateRep" : "12/06/2020",
+        "day" : "12",
+        "month" : "6",
+        "year" : "2020",
+        "cases" : "747",
+        "deaths" : "21",
+        "countriesAndTerritories" : "Afghanistan",
+        "geoId" : "AF",
+        "countryterritoryCode" : "AFG",
+        "popData2018" : "37172386",
+        "continentExp" : "Asia"
+}
+
+
