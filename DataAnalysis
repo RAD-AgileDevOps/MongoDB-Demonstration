@@ -3,7 +3,8 @@
 #ECDC COVID19 Data Analysis - 2020/06/22
 
 
-#In this query I am ascertaining " A sample of 5 records where the country is Trinidad & Tobago, and where are "cases"), with the following fields:
+#In this query I am ascertaining " A sample of 5 records where the country is Trinidad & Tobago, and where are "cases"), 
+with the following fields:
 #  "cases" , "deaths", "geoId"
 
 
