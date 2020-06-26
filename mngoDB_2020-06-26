@@ -1,0 +1,125 @@
+
+C:\Users\radfi>mongo
+MongoDB shell version v4.2.2
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("a366fe90-2a74-4dae-9212-15341ad76f83") }
+MongoDB server version: 4.2.2
+Server has startup warnings:
+2020-06-26T02:55:25.699-0400 I  CONTROL  [initandlisten]
+2020-06-26T02:55:25.700-0400 I  CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2020-06-26T02:55:25.700-0400 I  CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2020-06-26T02:55:25.700-0400 I  CONTROL  [initandlisten]
+MongoDB Enterprise > use CORD19
+switched to db CORD19
+
+
+-- a list of collections(tables in RDBMS terminology)
+
+MongoDB Enterprise > show collections
+20200418
+col_ecdcCOVID19_20200529
+col_ecdcCOVID19_20200608
+col_ecdcCOVID19_20200609
+col_ecdcCOVID19_20200610
+col_ecdcCOVID19_20200611
+col_ecdcCOVID19_20200612.json
+col_ecdcCOVID19_20200615
+col_ecdcCOVID19_20200622
+col_ecdcCOVID19_20200623
+col_ecdcCOVID19_20200626
+col_ecdcCo19(20200624
+covid_live_dataset
+ecdcCOVID19_20200606
+ecdcCOVID19_20200617.json
+ecdc_download_202000601
+ecdc_download_202000603
+ecdc_download_20200419
+ecdc_download_20200527_2115
+ecdc_download_20200528_0748
+ecdc_download_20200529_0316am
+ecdc_download_20200530
+radfs_poc20200623
+sales
+tbl_ecdcCOVID19_20200607
+
+-- shell command to ascertain the number of documents(records) in todays ECDC table
+MongoDB Enterprise > db.col_ecdcCOVID19_20200626.count()
+25935
+MongoDB Enterprise >
+
+-- query for Trinidad entrie from 2020-06-26 ECDC dataset
+MongoDB Enterprise > db.col_ecdcCOVID19_20200626.find({"geoId": {$regex:/TT/}}).limit(5).pretty()
+
+  -- here I used a regular expresiion criteria to extra the first 5 entries for Trinidad:
+  
+{
+        "_id" : ObjectId("5ef603b1f10ecfa7476cd599"),
+        "dateRep" : "26/06/2020",
+        "day" : "26",
+        "month" : "06",
+        "year" : "2020",
+        "cases" : 0,
+        "deaths" : 0,
+        "countriesAndTerritories" : "Trinidad_and_Tobago",
+        "geoId" : "TT",
+        "countryterritoryCode" : "TTO",
+        "popData2019" : 1394969,
+        "continentExp" : "America"
+}
+{
+        "_id" : ObjectId("5ef603b1f10ecfa7476cd59b"),
+        "dateRep" : "25/06/2020",
+        "day" : "25",
+        "month" : "06",
+        "year" : "2020",
+        "cases" : 0,
+        "deaths" : 0,
+        "countriesAndTerritories" : "Trinidad_and_Tobago",
+        "geoId" : "TT",
+        "countryterritoryCode" : "TTO",
+        "popData2019" : 1394969,
+        "continentExp" : "America"
+}
+{
+        "_id" : ObjectId("5ef603b1f10ecfa7476cd59c"),
+        "dateRep" : "24/06/2020",
+        "day" : "24",
+        "month" : "06",
+        "year" : "2020",
+        "cases" : 0,
+        "deaths" : 0,
+        "countriesAndTerritories" : "Trinidad_and_Tobago",
+        "geoId" : "TT",
+        "countryterritoryCode" : "TTO",
+        "popData2019" : 1394969,
+        "continentExp" : "America"
+}
+{
+        "_id" : ObjectId("5ef603b1f10ecfa7476cd59d"),
+        "dateRep" : "22/06/2020",
+        "day" : "22",
+        "month" : "06",
+        "year" : "2020",
+        "cases" : 0,
+        "deaths" : 0,
+        "countriesAndTerritories" : "Trinidad_and_Tobago",
+        "geoId" : "TT",
+        "countryterritoryCode" : "TTO",
+        "popData2019" : 1394969,
+        "continentExp" : "America"
+}
+{
+        "_id" : ObjectId("5ef603b1f10ecfa7476cd59e"),
+        "dateRep" : "23/06/2020",
+        "day" : "23",
+        "month" : "06",
+        "year" : "2020",
+        "cases" : 0,
+        "deaths" : 0,
+        "countriesAndTerritories" : "Trinidad_and_Tobago",
+        "geoId" : "TT",
+        "countryterritoryCode" : "TTO",
+        "popData2019" : 1394969,
+        "continentExp" : "America"
+}
+
