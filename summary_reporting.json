@@ -3,10 +3,8 @@ db.collection.aggregate( [ { $group : { _id : "$countriesAndTerritories" } } ] )
 
 # caribbean countries (to be completed)
 
- 
 
-db.col_ecdcCOVID19_20200627.find({"countriesAndTerritories":{ $in:[/Trinidad/, "Barbados" ,"Grenada"]}},{"dateRep":1, "countriesAndTerritories":1,"cases":1 , "deaths": 1 ,"_id":0 })
-
+db.col_ecdcCOVID19_20200627.find({"countriesAndTerritories":{ $in:[/Trinidad/, "Barbados" ,"Grenada"]}},{"dateRep":1, "countriesAndTerritories":1,"cases":1 , "deaths": 1 ,"_id":0 }).pretty()
 
 /*  
 ---------comments/ scrap workings-------------------------+-----------+------
